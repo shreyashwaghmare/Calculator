@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body{
+            margin: 0%;
+        }
+        #main{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+           background-color: black;
+           border: 20px solid rgb(22, 22, 22);
+            
+        }
+        #calc{
+            height: 500px;
+            width: 100%;
+           
+            display: grid;
+            grid-template-columns:auto auto auto auto ;
+            grid-template-rows: auto auto auto auto ;
+            justify-content: center;
+            align-items: center;
+            padding: 0%;
+           
+        }
+        p{
+            background-color: azure;
+            text-align: center;
+            height: 50px;
+            width: 550px;
+            font-size: larger;
+            font-weight: bolder;
+            padding-top: 10px;
+            color: darkgreen;
+            
+
+        }
+        .btn{
+            height: 80px;
+            width: 145px;
+            background-color: cadetblue;
+            margin: 0%;
+            border: 1px dashed rgb(61, 18, 18);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p id="disp"></p>
+        <div id="calc">
+            
+            <button class="btn" id="1" onclick="display(1)">1</button>
+            <button class="btn" id="2" onclick="display(2)">2</button>
+            <button class="btn" id="3" onclick="display(3)">3</button>
+            <button class="btn" id="4" onclick="display(4)">4</button>
+            <button class="btn" id="5"onclick="display(5)">5</button>
+            <button class="btn" id="6"onclick="display(6)">6</button>
+            <button class="btn" id="7"onclick="display(7)">7</button>
+            <button class="btn" id="8"onclick="display(8)">8</button>
+            <button class="btn" id="9"onclick="display(9)">9</button>
+            <button class="btn" id="0"onclick="display(0)">0</button>
+            <button class="btn" id="+" onclick="add()">+</button>
+            <button class="btn" id="-" onclick="sub()">-</button>
+            <button class="btn" id="*" onclick="mul()">*</button>
+            <button class="btn" id="/" onclick="divi()">/</button>
+            <button class="btn" id="=" onclick="result()" >=</button>
+            <button class="btn" id="reset" onclick="reset()">Clear</button>
+
+        </div>
+    </div>
+    <script>
+       var a,b,c,d,e;
+        var op;
+        c = 0;
+        
+        
+        function display(d){
+            
+              document.getElementById("disp").innerHTML += d;
+            
+        }
+        function add(){
+             a = document.getElementById("disp").innerHTML;
+         op = 1;
+            document.getElementById("disp").innerHTML="";
+           
+            }
+        function sub(){
+             a = document.getElementById("disp").innerHTML;
+            op =2;
+            document.getElementById("disp").innerHTML="";
+            }
+
+        function mul(){
+             a = document.getElementById("disp").innerHTML;
+           op =3;
+            document.getElementById("disp").innerHTML="";
+            }
+
+        function divi(){
+             a = document.getElementById("disp").innerHTML;
+           op = 4;
+            document.getElementById("disp").innerHTML="";
+            }
+        function result(){
+               
+                b = document.getElementById("disp").innerHTML;
+               
+               
+                if(op==1){
+                    c = parseInt(a) + parseInt(b);
+                }
+                else if (op==2){
+                    c =  parseInt(a) - parseInt(b);
+                }
+                else if(op==3){
+                    c = parseInt(a) * parseInt(b);
+                }
+                else if(op==4){
+                    c = parseInt(a) / parseInt(b);
+                }
+              
+            document.getElementById("disp").innerHTML = c;
+            }
+        function reset(){
+            document.getElementById("disp").innerHTML=" ";
+        }
+    </script>
+    
+</body>
+</html>
